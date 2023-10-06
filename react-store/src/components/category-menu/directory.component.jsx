@@ -1,7 +1,7 @@
-import "./category-menu.styles.scss";
+import "./directory.styles.scss";
 import CategoryItem from "../category-item/category-item.component";
 
-const CategoryMenu = ({categories}) => {
+const Directory = ({categories}) => {
 
   return (
     <div className="categories-container">
@@ -12,4 +12,4 @@ const CategoryMenu = ({categories}) => {
   );
 };
 
-export default CategoryMenu;
+export default Directory;
