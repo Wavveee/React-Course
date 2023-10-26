@@ -1,12 +1,12 @@
 import { useState } from "react";
 import FormInput from "../form-input/form-input.component";
 import Button from "../button/button.component";
-import "./sign-up-form.styles.scss";
 import {
   createAuthUserWithEmailAndPassword,
   createUserDocumentFromAuth,
 } from "../../utils/firebase/firebase.utils";
 
+import {SignUpConstainer} from "./sign-up-form.styles";
 
 const defaultFormName = {
   displayName: "",
@@ -54,7 +54,7 @@ const SignUpForm = () => {
   };
 
   return (
-    <div className="sign-up-container">
+    <SignUpConstainer>
       <h2>Dont have an account?</h2>
       <span>Sign up with your email and password</span>
       <form onSubmit={handleSubmit}>
@@ -95,7 +95,7 @@ const SignUpForm = () => {
         />
         <Button type="submit">Sign up</Button>
       </form>
-    </div>
+    </SignUpConstainer>
   );
 };
 
