@@ -1,9 +1,10 @@
 import { useNavigate } from "react-router-dom";
-import { useContext } from "react";
-import { CartContext } from "../../contexts/cart.context";
 
-import Button, {BUTTON_TYPE_CLASSES} from "../button/button.component";
+import { useSelector } from "react-redux";
+
+import Button, { BUTTON_TYPE_CLASSES } from "../button/button.component";
 import CartItem from "../cart-item/cart-item.component";
+import { selectCartItems } from "../../store/cart/cart.selector";
 
 import {
   CartDropdownContainer,
@@ -11,8 +12,8 @@ import {
   CartItems,
 } from "./cart-dropdown.styles";
 
-const CartDropdown = () => {
-  const { cartItems } = useContext(CartContext);
+const CartDropdown = () => { 
+  const cartItems = useSelector(selectCartItems);
   const navigate = useNavigate();
 
   const goToCheckoutHandler = () => {
@@ -29,7 +30,12 @@ const CartDropdown = () => {
         )}
       </CartItems>
 
-      <Button buttonType={BUTTON_TYPE_CLASSES.inverted} onClick={goToCheckoutHandler}>Go To Checkout</Button>
+      <Button
+        buttonType={BUTTON_TYPE_CLASSES.inverted}
+        onClick={goToCheckoutHandler}
+      >
+        Go To Checkout
+      </Button>
     </CartDropdownContainer>
   );
 };
