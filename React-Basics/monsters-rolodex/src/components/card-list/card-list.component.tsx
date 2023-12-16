@@ -1,8 +1,13 @@
 // import { Component } from "react";
 import CardContainer from "./card-container/card-container.component";
 import "./card-list.styles.css";
+import { Monster } from "../../App";
 
-const Cardlist = ({ monsters }) => (
+type CardListProps = {
+  monsters: Monster[];
+};
+
+const CardList = ({ monsters }: CardListProps) => (
   <div className="card-list">
     {monsters.map((monster) => {
       const { id, name, email } = monster;
@@ -26,4 +31,4 @@ const Cardlist = ({ monsters }) => (
 //   }
 // }
 
-export default Cardlist;
+export default CardList;

@@ -1,12 +1,11 @@
 // import { Component } from "react";
-import "./card-container.styles.css";
 
-const CardContainer = ({id, name, email}) => (
+import "./card-container.styles.css";
+import { Monster } from "../../../App";
+
+const CardContainer = ({ id, name, email }: Monster) => (
   <div key={id} className="card-container">
-    <img
-      alt={`monster ${name}`}
-      src={`https://robohash.org/${id}?set=set2`}
-    />
+    <img alt={`monster ${name}`} src={`https://robohash.org/${id}?set=set2`} />
     <h2>{name}</h2>
     <p>{email}</p>
   </div>
