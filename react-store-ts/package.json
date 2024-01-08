@@ -29,6 +29,7 @@
     "sass": "^1.68.0",
     "stripe": "^14.5.0",
     "styled-components": "^6.1.0",
+    "typed-redux-saga": "^1.5.0",
     "typescript": "^5.3.3",
     "web-vitals": "^2.1.4"
   },
